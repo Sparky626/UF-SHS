@@ -84,7 +84,7 @@ const HomePage = () => (
       </div>
       <div className="card card--padded text-center" style={{height: '450px'}}>
             <h2>Main Chapter</h2>
-            <img src={MainChapterLogo} alt="Main Chapter Logo" width="300" height="300"></img>
+            <img src={MainChapterLogo} alt="Main Chapter Logo" width="300" height="300" style={{marginTop:"50px", marginBottom: "50px"}}></img>
             <a href="https://www.iise.org/SHS/">Discover the national organization!</a>
       </div>
     </div>
@@ -96,7 +96,7 @@ const HomePage = () => (
 const AboutPage = () => (
   <div className="container page">
     <h1 className="title title--h1 text-center mb-6">What is Society For Health Systems?</h1>
-    <div className="card card--padded mb-8">
+    <div className="card card--padded mb-8" style={{width: '100%'}}>
       <p className="lead">
         The Society for Health Systems (SHS), part of the Institute of Industrial and Systems 
         Engineers (IISE), is dedicated to improving healthcare delivery through systems 

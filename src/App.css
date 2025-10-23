@@ -24,7 +24,7 @@ body{ font-family: Arial, Helvetica, sans-serif; line-height:1.6; color:var(--te
 .text-center{ text-align:center; }
 
 /* Header */
-.header{ background: linear-gradient(135deg, var(--accent-green-1) 0%, #006747 50%, var(--accent-green-2) 100%); padding:40px 20px; text-align:center; box-shadow:0 4px 6px rgba(0,0,0,0.1); }
+.header{ background: linear-gradient(135deg, var(--accent-green-1) 0%, #006747 50%, var(--accent-green-2) 100%); padding-top :30px; padding-bottom: 10px; text-align:center; box-shadow:0 4px 6px rgba(0,0,0,0.1); }
 .header__title{ color:#fff; font-size:2.5rem; font-weight:700; letter-spacing:0.5px; text-shadow:2px 2px 4px rgba(0,0,0,0.2); font-family:'Arial Black', Arial, sans-serif; }
 .header__subtitle{ color:rgba(255,255,255,0.95); margin-top:8px; font-size:1rem; }
 .header__title::before{ content:'❤'; display:inline-block; margin-right:12px; animation:heartbeat 1.5s ease-in-out infinite; color:rgba(255,255,255,0.95); }
