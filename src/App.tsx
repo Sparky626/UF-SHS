@@ -1,7 +1,21 @@
 import React, { useState } from 'react';
-
+import logo from './assets/Logo-White.png';
+import GeovannyOrtiz from './assets/GeovannyOrtiz.jpeg';
+import JackDodd from './assets/JackDodd.jpg';
+import AllenKurian from './assets/AllenKurian.jpg';
+import ManuelaMartinez from './assets/ManuelaMartinez.jpg';
+import WesleyGelinas from './assets/WesleyGelinas.png';
+import AlejandraHernandez from './assets/AlejandraHernandez.jpg';
+import SabrinaRule from './assets/SabrinaRule.jpg';
+import DakotaLeonard from './assets/DakotaLeonard.png';
+import ClaireBurnsides from './assets/ClaireBurnsides.jpg';
 // Navigation Component
-const Navigation = ({ currentPage, onNavigate }) => {
+interface NavigationProps {
+  currentPage: string;
+  onNavigate: (page: string) => void;
+}
+
+const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
   const navItems = [
     { id: 'home', label: 'HOME' },
     { id: 'about', label: 'ABOUT US' },
@@ -9,96 +23,84 @@ const Navigation = ({ currentPage, onNavigate }) => {
     { id: 'events', label: 'EVENTS' },
     { id: 'contact', label: 'CONTACT US' }
   ];
-
-  return (
-    <nav className="bg-[#0066cc] shadow-lg">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-center space-x-1">
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => onNavigate(item.id)}
-              className={`px-6 py-4 text-white font-semibold transition-colors hover:bg-[#0052a3] ${
-                currentPage === item.id ? 'bg-[#0052a3]' : ''
-              }`}
-            >
-              {item.label}
-            </button>
-          ))}
-        </div>
-      </div>
-    </nav>
-  );
+        return (
+          <nav className="nav">
+            <div className="nav__container container">
+              <div className="nav__list">
+                {navItems.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => onNavigate(item.id)}
+                    className={`nav__item ${currentPage === item.id ? 'nav__item--active' : ''}`}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </nav>
+        );
 };
 
 // Header Component
 const Header = () => (
-  <header className="bg-gradient-to-r from-[#0052a3] to-[#0066cc] py-8">
-    <div className="max-w-7xl mx-auto px-4 text-center">
-      <h1 className="text-5xl font-bold text-white mb-2">
-        Society for Health Systems
-      </h1>
-      <p className="text-xl text-white/90">University of Florida Chapter</p>
+  <header className="header">
+    <div className="container">
+      <img src={logo} alt="SHS Logo" className="logo" />
+      <h1 className="header__title">Society for Health Systems</h1>
+      <p className="header__subtitle">UF Student Chapter</p>
     </div>
   </header>
 );
 
 // Footer Component
 const Footer = () => (
-  <footer className="bg-gray-800 text-white py-6 mt-12">
-    <div className="max-w-7xl mx-auto px-4 text-center">
-      <a 
-        href="https://www.ise.ufl.edu" 
-        className="text-blue-400 hover:text-blue-300 transition-colors"
+  <footer className="footer">
+    <div className="container text-center">
+      <a
+        href="https://www.ise.ufl.edu"
+        className="footer__link"
         target="_blank"
         rel="noopener noreferrer"
       >
         UF Department of Industrial and Systems Engineering
       </a>
-      <p className="mt-2 text-gray-400">UF 2024</p>
+      <p className="muted--light mt-2">UF 2024</p>
     </div>
   </footer>
 );
 
 // Home Page Component
 const HomePage = () => (
-  <div className="max-w-7xl mx-auto px-4 py-8">
-    <div className="grid md:grid-cols-3 gap-8">
-      <div className="md:col-span-2">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4 text-center">
-          Welcome to the Society for Health Systems
-        </h2>
-        <p className="text-lg text-gray-700 leading-relaxed text-center">
-          The Society for Health Systems, the preeminent organization for healthcare engineers, 
-          is the meeting of minds for health systems professionals and leaders like you. 
-          SHS offers a wide network of colleagues, experts and resources outside your organization, 
-          along with the latest and best process analytics, tools, techniques and methodologies for 
-          performance improvement and opportunities for professional development.
+  <div className="container page">
+    <div className="grid grid--home gap-8">
+      <div className="card card--padded text-center">
+        <h3 className="title">Get Involved</h3>
+        <p className="lead">Join meetings, workshops and connect with local healthcare engineers.</p>
+      </div>
+
+      <div className="card card--padded text-center">
+        <h2 className="title title--h2 mb-4">Welcome to the Society for Health Systems</h2>
+        <p className="lead">
+          The Society for Health Systems is the meeting of minds for health systems professionals and leaders. SHS provides a network of colleagues, the latest process analytics and tools, and opportunities for professional development at UF.
         </p>
       </div>
-      <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">Main Chapter</h2>
-        <a 
-          href="https://www.iise.org/SHS/" 
-          className="text-blue-600 hover:text-blue-700 font-semibold"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Discover the national organization!
-        </a>
+
+      <div className="card card--padded text-center">
+        <h3 className="title">Events & News</h3>
+        <p className="lead">Check upcoming workshops, speaker events and recent project highlights from our members.</p>
       </div>
     </div>
   </div>
 );
+ 
 
 // About Page Component
 const AboutPage = () => (
-  <div className="max-w-7xl mx-auto px-4 py-8">
-    <h1 className="text-4xl font-bold text-gray-800 mb-6 text-center">
-      What is Society For Health Systems?
-    </h1>
-    <div className="bg-white rounded-lg shadow-md p-8 mb-8">
-      <p className="text-lg text-gray-700 leading-relaxed">
+  <div className="container page">
+    <h1 className="title title--h1 text-center mb-6">What is Society For Health Systems?</h1>
+    <div className="card card--padded mb-8">
+      <p className="lead">
         The Society for Health Systems (SHS), part of the Institute of Industrial and Systems 
         Engineers (IISE), is dedicated to improving healthcare delivery through systems 
         engineering and process improvement. SHS's mission is to enhance lives by advancing 
@@ -111,9 +113,9 @@ const AboutPage = () => (
       </p>
     </div>
 
-    <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Mission Statement</h2>
-    <div className="bg-blue-50 rounded-lg shadow-md p-8">
-      <p className="text-lg text-gray-700 leading-relaxed">
+    <h2 className="title title--h2 text-center mb-6">Mission Statement</h2>
+    <div className="card card--accent">
+      <p className="lead">
         The purpose of the Society for Health Systems is to promote the use and awareness of systems
         engineering, analysis, and process improvement in the healthcare field by providing appropriate
         education and career opportunities to University of Florida students.
@@ -144,14 +146,14 @@ const NewsPage = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">Latest News</h1>
+    <div className="container page">
+      <h1 className="title title--h1 text-center mb-8">Latest News</h1>
       <div className="space-y-8">
         {newsItems.map((item, index) => (
-          <div key={index} className="bg-white rounded-lg shadow-md p-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-2">{item.title}</h2>
-            <p className="text-blue-600 font-semibold mb-4">{item.date}</p>
-            <p className="text-gray-700 leading-relaxed">{item.content}</p>
+          <div key={index} className="card">
+            <h2 className="title mb-2">{item.title}</h2>
+            <p className="muted mb-4">{item.date}</p>
+            <p className="lead">{item.content}</p>
           </div>
         ))}
       </div>
@@ -186,14 +188,14 @@ const EventsPage = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">Upcoming Events</h1>
+    <div className="container page">
+      <h1 className="title title--h1 text-center mb-8">Upcoming Events</h1>
       <div className="space-y-8">
         {events.map((event, index) => (
-          <div key={index} className="bg-white rounded-lg shadow-md p-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-2">{event.title}</h2>
-            <p className="text-blue-600 font-semibold mb-4">Date: {event.date}</p>
-            <p className="text-gray-700 leading-relaxed">{event.description}</p>
+          <div key={index} className="card">
+            <h2 className="title mb-2">{event.title}</h2>
+            <p className="muted mb-4">Date: {event.date}</p>
+            <p className="lead">{event.description}</p>
           </div>
         ))}
       </div>
@@ -204,38 +206,33 @@ const EventsPage = () => {
 // Contact Page Component
 const ContactPage = () => {
   const board = [
-    { name: 'Jack Dodd', position: 'President', email: 'jack.dodd@ufl.edu' },
-    { name: 'Allen Kurian', position: 'Internal Vice President', email: 'allen.kurian@ufl.edu' },
-    { name: 'Manuela Martinez', position: 'External Vice President', email: 'manuela.martinez@ufl.edu' },
-    { name: 'Wesley Gelinas', position: 'Treasurer', email: 'wesley.gelinas@ufl.edu' },
-    { name: 'Alejandra Hernandez', position: 'Director of Communications', email: 'alejandra.hernandez@ufl.edu' },
-    { name: 'Sabrina Rule', position: 'Director of Fundraising', email: 's.rule@ufl.edu' },
-    { name: 'Dakota Leonard', position: 'Chapter Development Chair', email: 'dakota.leonard@ufl.edu' },
-    { name: 'Claire Burnsides', position: 'Outreach Chair', email: 'claire.burnsides@ufl.edu' },
-    { name: 'Geovanny Ortiz', position: 'Webmaster', email: 'gortiz2@ufl.edu' }
+    { name: 'Jack Dodd', position: 'President', email: 'jack.dodd@ufl.edu', img: JackDodd },
+    { name: 'Allen Kurian', position: 'Internal Vice President', email: 'allen.kurian@ufl.edu', img: AllenKurian },
+    { name: 'Manuela Martinez', position: 'External Vice President', email: 'manuela.martinez@ufl.edu', img: ManuelaMartinez },
+    { name: 'Wesley Gelinas', position: 'Treasurer', email: 'wesley.gelinas@ufl.edu', img: WesleyGelinas },
+    { name: 'Alejandra Hernandez', position: 'Director of Communications', email: 'alejandra.hernandez@ufl.edu', img: AlejandraHernandez },
+    { name: 'Sabrina Rule', position: 'Director of Fundraising', email: 's.rule@ufl.edu', img: SabrinaRule },
+    { name: 'Dakota Leonard', position: 'Chapter Development Chair', email: 'dakota.leonard@ufl.edu', img: DakotaLeonard },
+    { name: 'Claire Burnsides', position: 'Outreach Chair', email: 'claire.burnsides@ufl.edu', img: ClaireBurnsides },
+    { name: 'Geovanny Ortiz', position: 'Webmaster', email: 'gortiz2@ufl.edu', img: GeovannyOrtiz }
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">
-        Current Executive Board
-      </h1>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="container page">
+      <h1 className="title title--h1 text-center mb-8">Current Executive Board</h1>
+      <div className="grid grid--cols-3 gap-6">
         {board.map((member, index) => (
-          <div key={index} className="bg-white rounded-lg shadow-md p-6 text-center">
-            <div className="w-32 h-32 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <span className="text-4xl text-white font-bold">
-                {member.name.split(' ').map(n => n[0]).join('')}
-              </span>
+          <div key={index} className="card text-center">
+            <div className="board-avatar">
+              {member.img ? (
+                <img src={member.img} alt={member.name} className="avatar-img" />
+              ) : (
+                <span>{member.name.split(' ').map(n => n[0]).join('')}</span>
+              )}
             </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2">{member.name}</h3>
-            <p className="text-gray-600 mb-3">{member.position}</p>
-            <a 
-              href={`mailto:${member.email}`} 
-              className="text-blue-600 hover:text-blue-700 text-sm"
-            >
-              {member.email}
-            </a>
+            <h3 className="text-xl font-bold mb-2">{member.name}</h3>
+            <p className="muted mb-3">{member.position}</p>
+            <a href={`mailto:${member.email}`} className="footer__link text-sm">{member.email}</a>
           </div>
         ))}
       </div>
@@ -265,7 +262,7 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <Header />
       <Navigation currentPage={currentPage} onNavigate={setCurrentPage} />
       <main className="flex-grow">
