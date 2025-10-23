@@ -9,6 +9,7 @@ import AlejandraHernandez from './assets/AlejandraHernandez.jpg';
 import SabrinaRule from './assets/SabrinaRule.jpg';
 import DakotaLeonard from './assets/DakotaLeonard.png';
 import ClaireBurnsides from './assets/ClaireBurnsides.jpg';
+import MainChapterLogo from './assets/MainChapterLogo.png';
 // Navigation Component
 interface NavigationProps {
   currentPage: string;
@@ -47,8 +48,6 @@ const Header = () => (
   <header className="header">
     <div className="container">
       <img src={logo} alt="SHS Logo" className="logo" />
-      <h1 className="header__title">Society for Health Systems</h1>
-      <p className="header__subtitle">UF Student Chapter</p>
     </div>
   </header>
 );
@@ -75,20 +74,18 @@ const HomePage = () => (
   <div className="container page">
     <div className="grid grid--home gap-8">
       <div className="card card--padded text-center">
-        <h3 className="title">Get Involved</h3>
-        <p className="lead">Join meetings, workshops and connect with local healthcare engineers.</p>
+        <iframe src="https://widget.tagembed.com/84470?website=1" style={{width: '100%',height:'400px',overflow:'auto',border:'none'}}></iframe>
       </div>
-
       <div className="card card--padded text-center">
         <h2 className="title title--h2 mb-4">Welcome to the Society for Health Systems</h2>
         <p className="lead">
           The Society for Health Systems is the meeting of minds for health systems professionals and leaders. SHS provides a network of colleagues, the latest process analytics and tools, and opportunities for professional development at UF.
         </p>
       </div>
-
       <div className="card card--padded text-center">
-        <h3 className="title">Events & News</h3>
-        <p className="lead">Check upcoming workshops, speaker events and recent project highlights from our members.</p>
+        <h2>Main Chapter</h2>
+            <a href="https://www.iise.org/SHS/">Discover the national organization!</a>
+            <img src={MainChapterLogo} alt="Main Chapter Logo" width="300" height="300"></img>
       </div>
     </div>
   </div>
