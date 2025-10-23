@@ -64,7 +64,7 @@ const Footer = () => (
       >
         UF Department of Industrial and Systems Engineering
       </a>
-      <p className="muted--light mt-2">UF 2024</p>
+      <p className="muted--light mt-2">UF 2025</p>
     </div>
   </footer>
 );
@@ -142,38 +142,34 @@ const NewsPage = () => {
     }
   ];
 
-  return (
-    <div className="container page">
-      <h1 className="title title--h1 text-center mb-8">Latest News</h1>
-      <div className="space-y-8">
-        {newsItems.map((item, index) => (
-          <div key={index} className="card">
-            <h2 className="title mb-2">{item.title}</h2>
-            <p className="muted mb-4">{item.date}</p>
-            <p className="lead">{item.content}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
+    return (
+      <div className="container page centered-column events-centered">
+         <h1 className="title title--h1 text-center mb-8">Latest News</h1>
+         <div className="space-y-8" style={{width: '100%'}}>
+           {newsItems.map((item, index) => (
+             <div key={index} className="card text-center">
+               <h2 className="title mb-2">{item.title}</h2>
+               <p className="muted mb-4">{item.date}</p>
+               <p className="lead">{item.content}</p>
+             </div>
+           ))}
+         </div>
+       </div>
+    );
+  };
 
 // Events Page Component
 const EventsPage = () => {
   const events = [
     {
-      title: 'Healthcare Optimization Workshop',
-      date: 'May 15, 2025',
-      description: `Join SHS for a hands-on workshop on process improvement techniques for hospital operations. 
-                    Led by SHS advisors, this event will teach you how to streamline workflows using Lean and 
-                    Six Sigma methodologies. Open to all UF students. Register via the SHS member portal!`
+      title: 'Fall 2025 General Body Meeting #1 Featuring Amazon Speaker!',
+      date: 'October 23, 2025',
+      description: `Join us for our First General Body Meeting to learn about upcoming events and hear from Amazon about their operations and supply chain opportunities.`
     },
     {
-      title: 'Guest Speaker: Dr. Emily Tran',
-      date: 'June 10, 2025',
-      description: `Hear from Dr. Emily Tran, a UF alum and expert in healthcare logistics, as she discusses the 
-                    role of AI in optimizing hospital supply chains. This virtual event includes a Q&A session. 
-                    Free for SHS members; non-members can purchase tickets for $5.`
+      title: 'Blaze Pizza Fundraiser Night',
+      date: 'November 5, 2025',
+      description: `Let's raise some dough! Join SHS at Blaze Pizza for some a slice! Blaze will donate 20% of the event sales to our cause!`
     },
     {
       title: 'SHS Networking Night',
@@ -184,26 +180,26 @@ const EventsPage = () => {
     }
   ];
 
-  return (
-    <div className="container page">
-      <h1 className="title title--h1 text-center mb-8">Upcoming Events</h1>
-      <div className="space-y-8">
-        {events.map((event, index) => (
-          <div key={index} className="card">
-            <h2 className="title mb-2">{event.title}</h2>
-            <p className="muted mb-4">Date: {event.date}</p>
-            <p className="lead">{event.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
+     return (
+       <div className="container page centered-column">
+         <h1 className="title title--h1 text-center mb-8">Upcoming Events</h1>
+         <div className="space-y-8" style={{width: '100%'}}>
+           {events.map((event, index) => (
+             <div key={index} className="card text-center">
+               <h2 className="title mb-2" >{event.title}</h2>
+               <p className="muted mb-4">Date: {event.date}</p>
+               <p className="lead">{event.description}</p>
+             </div>
+           ))}
+         </div>
+       </div>
+    );
+  };
 
 // Contact Page Component
 const ContactPage = () => {
   const board = [
-    { name: 'Jack Dodd', position: 'President', email: 'jack.dodd@ufl.edu', img: JackDodd },
+    { name: 'John Dodd', position: 'President', email: 'doddjohn@ufl.edu', img: JackDodd },
     { name: 'Allen Kurian', position: 'Internal Vice President', email: 'allen.kurian@ufl.edu', img: AllenKurian },
     { name: 'Manuela Martinez', position: 'External Vice President', email: 'manuela.martinez@ufl.edu', img: ManuelaMartinez },
     { name: 'Wesley Gelinas', position: 'Treasurer', email: 'wesley.gelinas@ufl.edu', img: WesleyGelinas },

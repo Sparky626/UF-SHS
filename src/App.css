@@ -47,7 +47,6 @@ body{ font-family: Arial, Helvetica, sans-serif; line-height:1.6; color:var(--te
 .card{ background:#fff; border-radius:12px; box-shadow:0 4px 6px rgba(0,0,0,0.08); padding:1.5rem; }
 .card--padded{ padding:2rem; }
 .card--accent{ background:#eff6ff; }
-.card--marginbottom{ margin-bottom:5rem; }
 
 .title{ font-size:1.5rem; font-weight:700; color:var(--text); margin-bottom:1rem; }
 .title--h1{ font-size:2rem; }
@@ -65,6 +64,16 @@ body{ font-family: Arial, Helvetica, sans-serif; line-height:1.6; color:var(--te
 .footer__link{ color:#60a5fa; text-decoration:none; transition:color .15s ease; }
 .footer__link:hover{ color:#93c5fd; }
 .muted--light{ color:#9ca3af; }
+
+/* Centering helpers for list pages */
+.centered-column{ display:flex; flex-direction:column; align-items:center; }
+.centered-column > .card{ width:100%; max-width:700px; margin:0 auto; }
+
+/* Events page narrower cards */
+.events-centered > .card{ max-width:560px; }
+
+/* Ensure page-level titles are centered by default */
+.title--h1{ text-align:center; }
 
 /* Responsive */
 @media (max-width:768px){ .grid--cols-2,.grid--cols-3{ grid-template-columns:1fr; } .header__title{ font-size:1.75rem; } }
