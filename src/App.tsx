@@ -10,6 +10,7 @@ import SabrinaRule from './assets/SabrinaRule.jpg';
 import DakotaLeonard from './assets/DakotaLeonard.png';
 import ClaireBurnsides from './assets/ClaireBurnsides.jpg';
 import MainChapterLogo from './assets/MainChapterLogo.png';
+import GroupMe from './assets/groupme.jpg';
 // Navigation Component
 interface NavigationProps {
   currentPage: string;
@@ -84,8 +85,13 @@ const HomePage = () => (
       </div>
       <div className="card card--padded text-center" style={{height: '450px'}}>
             <h2>Main Chapter</h2>
+            <a href="https://www.iise.org/SHS/">
             <img src={MainChapterLogo} alt="Main Chapter Logo" width="300" height="300" style={{marginTop:"50px", marginBottom: "50px"}}></img>
-            <a href="https://www.iise.org/SHS/">Discover the national organization!</a>
+            </a>
+            <h2>Join our GroupMe!</h2>
+            <a href="https://groupme.com/join_group/96309893/yWceKNNm">
+            <img src={GroupMe} alt="GroupMe" width="100" height="100" style={{marginTop:"30px", marginBottom: "30px", marginLeft: "65px"}}></img>
+            </a>
       </div>
     </div>
   </div>
