@@ -73,19 +73,19 @@ const Footer = () => (
 const HomePage = () => (
   <div className="container page">
     <div className="grid grid--home gap-8">
-      <div className="card card--padded text-center">
+      <div className="card card--padded text-center" style={{height: '450px'}}>
         <iframe src="https://widget.tagembed.com/84470?website=1" style={{width: '100%',height:'400px',overflow:'auto',border:'none'}}></iframe>
       </div>
-      <div className="card card--padded text-center">
+      <div className="card card--padded text-center" style={{height: '450px'}}>
         <h2 className="title title--h2 mb-4">Welcome to the Society for Health Systems</h2>
         <p className="lead">
           The Society for Health Systems is the meeting of minds for health systems professionals and leaders. SHS provides a network of colleagues, the latest process analytics and tools, and opportunities for professional development at UF.
         </p>
       </div>
-      <div className="card card--padded text-center">
-        <h2>Main Chapter</h2>
-            <a href="https://www.iise.org/SHS/">Discover the national organization!</a>
+      <div className="card card--padded text-center" style={{height: '450px'}}>
+            <h2>Main Chapter</h2>
             <img src={MainChapterLogo} alt="Main Chapter Logo" width="300" height="300"></img>
+            <a href="https://www.iise.org/SHS/">Discover the national organization!</a>
       </div>
     </div>
   </div>
