@@ -77,6 +77,25 @@ body{ font-family: Arial, Helvetica, sans-serif; line-height:1.6; color:var(--te
 
 /* Responsive */
 @media (max-width:768px){ .grid--cols-2,.grid--cols-3{ grid-template-columns:1fr; } .header__title{ font-size:1.75rem; } }
+/* Mobile-specific tweaks */
+@media (max-width:768px){
+  .header{ padding:20px 12px; }
+  .logo{ width:140px; }
+  .nav__list{ gap:8px; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .nav__item{ padding:10px 12px; font-size:0.85rem; }
+  .grid--home{ grid-template-columns:1fr; gap:1rem; }
+  .card{ padding:1rem; }
+  .centered-column > .card{ max-width:92vw; }
+  .events-centered > .card{ max-width:92vw; }
+  .board-avatar{ width:6rem; height:6rem; }
+  .title--h1{ font-size:1.5rem; }
+  .title{ font-size:1.125rem; }
+  .lead{ font-size:1rem; }
+  .embed-widget{ height:400px; }
+  
+  .main-chapter-img{ width:60%; max-width:300px; height:auto; margin:40px 0; }
+  .groupme-img{ width:80px; height:80px; margin:20px 0; }
+}
 @media (max-width:768px){ .grid--home{ grid-template-columns:1fr; } }
 
 /* Images */

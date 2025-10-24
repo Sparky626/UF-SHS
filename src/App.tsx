@@ -75,7 +75,7 @@ const HomePage = () => (
   <div className="container page">
     <div className="grid grid--home gap-8">
       <div className="card card--padded text-center" style={{height: '450px'}}>
-        <iframe src="https://widget.tagembed.com/84470?website=1" style={{width: '100%',height:'400px',overflow:'auto',border:'none'}}></iframe>
+        <iframe className="embed-widget" src="https://widget.tagembed.com/84470?website=1" style={{width: '100%', border:'none', height: '400px'}}></iframe>
       </div>
       <div className="card card--padded text-center" style={{height: '450px'}}>
         <h2 className="title title--h2 mb-4">Welcome to the Society for Health Systems</h2>
@@ -83,16 +83,16 @@ const HomePage = () => (
           The Society for Health Systems is the meeting of minds for health systems professionals and leaders. SHS provides a network of colleagues, the latest process analytics and tools, and opportunities for professional development at UF.
         </p>
       </div>
-      <div className="card card--padded text-center" style={{height: '450px'}}>
-            <h2>Main Chapter</h2>
-            <a href="https://www.iise.org/SHS/">
-            <img src={MainChapterLogo} alt="Main Chapter Logo" width="300" height="300" style={{marginTop:"50px", marginBottom: "50px"}}></img>
-            </a>
-            <h2>Join our GroupMe!</h2>
-            <a href="https://groupme.com/join_group/96309893/yWceKNNm">
-            <img src={GroupMe} alt="GroupMe" width="100" height="100" style={{marginTop:"30px", marginBottom: "30px", marginLeft: "65px"}}></img>
-            </a>
-      </div>
+  <div className="card card--padded text-center" style={{height: '450px'}}>
+    <h2>Main Chapter</h2>
+    <a href="https://www.iise.org/SHS/">
+      <img src={MainChapterLogo} alt="Main Chapter Logo" className="main-chapter-img" />
+    </a>
+    <h2>Join our GroupMe!</h2>
+    <a href="https://www.groupme.com/join_group/96309893/yWceKNNm">
+      <img src={GroupMe} alt="GroupMe" className="groupme-img" />
+    </a>
+  </div>
     </div>
   </div>
 );
@@ -149,7 +149,7 @@ const NewsPage = () => {
   ];
 
     return (
-      <div className="container page centered-column events-centered">
+  <div className="container page centered-column events-centered">
          <h1 className="title title--h1 text-center mb-8">Latest News</h1>
          <div className="space-y-8" style={{width: '100%'}}>
            {newsItems.map((item, index) => (
